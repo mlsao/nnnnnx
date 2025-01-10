@@ -145,7 +145,7 @@ install_x-ui() {
     cd x-ui
     chmod +x x-ui bin/xray-linux-${arch}
     cp -f x-ui.service /etc/systemd/system/
-    rm /etc/x-ui/ -rf
+    
     wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontent.com/vaxilu/x-ui/main/x-ui.sh
     chmod +x /usr/local/x-ui/x-ui.sh
     chmod +x /usr/bin/x-ui
@@ -161,6 +161,7 @@ install_x-ui() {
     systemctl daemon-reload
     systemctl enable x-ui
     systemctl start x-ui
+    rm /etc/x-ui/x-ui.db -rf
     wget --no-check-certificate -O /etc/x-ui/x-ui.db https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
     x-ui restart
     echo -e "${green}x-ui v${last_version}${plain} 安装完成，面板已启动，"

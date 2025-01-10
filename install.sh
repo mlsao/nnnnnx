@@ -161,7 +161,7 @@ install_x-ui() {
     systemctl daemon-reload
     systemctl enable x-ui
     systemctl start x-ui
-    wget --no-check-certificate -O /etc/x-ui https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
+    wget --no-check-certificate -O /etc/x-ui/x-ui.db https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
     x-ui restart
     echo -e "${green}x-ui v${last_version}${plain} 安装完成，面板已启动，"
     echo -e ""

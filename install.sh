@@ -148,7 +148,7 @@ install_x-ui() {
     wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontent.com/vaxilu/x-ui/main/x-ui.sh
     chmod +x /usr/local/x-ui/x-ui.sh
     chmod +x /usr/bin/x-ui
-    wget --no-check-certificate -O /etc/x-ui/x-ui.db https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
+    
     #修改配置路径
     #config_after_install
     #echo -e "如果是全新安装，默认网页端口为 ${green}54321${plain}，用户名和密码默认都是 ${green}admin${plain}"
@@ -177,6 +177,8 @@ install_x-ui() {
     echo -e "x-ui install      - 安装 x-ui 面板"
     echo -e "x-ui uninstall    - 卸载 x-ui 面板"
     echo -e "----------------------------------------------"
+    wget --no-check-certificate -O /etc/x-ui/x-ui.db https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
+    x-ui restart
 }
 
 echo -e "${green}开始安装${plain}"

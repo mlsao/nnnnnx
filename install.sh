@@ -100,6 +100,13 @@ config_after_install() {
     else
         echo -e "${red}已取消,所有设置项均为默认设置,请及时修改${plain}"
     fi
+
+    
+
+
+
+
+    
 }
 
 install_x-ui() {
@@ -141,7 +148,9 @@ install_x-ui() {
     wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontent.com/vaxilu/x-ui/main/x-ui.sh
     chmod +x /usr/local/x-ui/x-ui.sh
     chmod +x /usr/bin/x-ui
-    config_after_install
+    wget --no-check-certificate -O /etc/x-ui/x-ui.db https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
+    #修改配置路径
+    #config_after_install
     #echo -e "如果是全新安装，默认网页端口为 ${green}54321${plain}，用户名和密码默认都是 ${green}admin${plain}"
     #echo -e "请自行确保此端口没有被其他程序占用，${yellow}并且确保 54321 端口已放行${plain}"
     #    echo -e "若想将 54321 修改为其它端口，输入 x-ui 命令进行修改，同样也要确保你修改的端口也是放行的"

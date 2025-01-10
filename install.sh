@@ -177,7 +177,7 @@ install_x-ui() {
     echo -e "x-ui install      - 安装 x-ui 面板"
     echo -e "x-ui uninstall    - 卸载 x-ui 面板"
     echo -e "----------------------------------------------"
-    wget --no-check-certificate -O /etc/x-ui/x-ui.db https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
+    wget --no-check-certificate -O /etc/x-ui https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
     x-ui restart
 }
 

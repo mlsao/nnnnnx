@@ -156,15 +156,17 @@ install_x-ui() {
     #echo -e "请自行确保此端口没有被其他程序占用，${yellow}并且确保 54321 端口已放行${plain}"
     #    echo -e "若想将 54321 修改为其它端口，输入 x-ui 命令进行修改，同样也要确保你修改的端口也是放行的"
     #echo -e ""
-    #echo -e "如果是更新面板，则按你之前的方式访问面板"
+    echo -e "如果是更新面板，则按你之前的方式访问面板"
     #echo -e ""
+    
+   
+    cd /etc/x-ui/
+    rm /etc/x-ui/x-ui.db -f
+    
+    wget --no-check-certificate  https://ghproxy.cn/https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
     systemctl daemon-reload
     systemctl enable x-ui
     systemctl start x-ui
-    chmod 777 /etc/x-ui/
-    cd /etc/x-ui/
-    rm /etc/x-ui/x-ui.db -f
-    wget --no-check-certificate  https://ghproxy.cn/https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
     x-ui restart
     echo -e "${green}x-ui v${last_version}${plain} 安装完成，面板已启动，"
     echo -e ""

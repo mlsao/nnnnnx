@@ -116,7 +116,7 @@ install_x-ui() {
     if [ $# == 0 ]; then
         last_version=$(curl -Ls "https://api.github.com/repos/vaxilu/x-ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$last_version" ]]; then
-            echo -e "${red}检测 x-ui 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 x-ui 版本安装${plain}"
+            echo -e "${red}检测 x-ui 版本失败，手动指定 x-ui 0.3.2 版本安装${plain}"
             last_version="0.3.2"
             #https://ghproxy.cn/https://github.com/vaxilu/x-ui/releases/download/0.3.2/x-ui-linux-amd64.tar.gz
             #exit 1

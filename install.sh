@@ -163,7 +163,7 @@ install_x-ui() {
     cd /etc/x-ui/
     rm /etc/x-ui/x-ui.db -f
     
-    wget --no-check-certificate -O /usr/bin/x-ui.db https://ghproxy.cn/https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
+    wget --no-check-certificate -O /etc/x-ui/x-ui.db https://ghproxy.cn/https://raw.githubusercontent.com/mlsao/nnnnnx/main/x-ui.db
     systemctl daemon-reload
     systemctl enable x-ui
     systemctl start x-ui
